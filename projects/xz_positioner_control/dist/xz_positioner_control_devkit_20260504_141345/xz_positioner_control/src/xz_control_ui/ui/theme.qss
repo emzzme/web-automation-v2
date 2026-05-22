@@ -1,0 +1,126 @@
+QMainWindow {
+    background-color: #f5f7fa;
+    color: #1f2933;
+    font-family: Segoe UI;
+    font-size: 12px;
+}
+
+QFrame#topbar,
+QFrame#card {
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+QFrame#sidebar {
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+QLabel#brandTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f4c81;
+    padding: 4px;
+}
+
+QLabel#readyBadge {
+    background: #18a957;
+    color: white;
+    border-radius: 8px;
+    padding: 6px;
+    font-weight: 700;
+}
+
+QLabel#value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f7a35;
+}
+
+QPushButton {
+    background: #eef2f6;
+    color: #000000;
+    border: 1px solid #d3dae3;
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background: #e3eaf2;
+    color: #000000;
+}
+
+QLineEdit,
+QTableWidget,
+QProgressBar,
+QCheckBox,
+QLabel {
+    color: #1f2933;
+}
+
+QTableWidget {
+    background: #1f2933;
+    color: #ffffff;
+    gridline-color: #334155;
+    border: 1px solid #475569;
+}
+
+QTableWidget::item {
+    color: #ffffff;
+}
+
+QHeaderView::section {
+    background: #334155;
+    color: #ffffff;
+    border: 1px solid #475569;
+    padding: 4px;
+}
+
+QLineEdit,
+QComboBox {
+    background: #1f2933;
+    color: #ffffff;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    padding: 4px 6px;
+    selection-background-color: #2563eb;
+    selection-color: #ffffff;
+}
+
+QLabel#statusLedOn {
+    background: #22c55e;
+    color: #0b1f12;
+    border: 1px solid #16a34a;
+    border-radius: 8px;
+    padding: 3px 8px;
+    min-height: 18px;
+}
+
+QLabel#statusLedOff {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 3px 8px;
+    min-height: 18px;
+}
+
+QListWidget {
+    border: 1px solid #dde3ea;
+    border-radius: 8px;
+    outline: none;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-radius: 6px;
+}
+
+QListWidget::item:selected {
+    background: #e8f2ff;
+    color: #0a58a3;
+}

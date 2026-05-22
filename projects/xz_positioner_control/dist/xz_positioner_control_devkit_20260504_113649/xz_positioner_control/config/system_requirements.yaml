@@ -1,0 +1,56 @@
+system:
+  name: "XZ Near-Field RF Measurement Platform"
+  version: "0.1"
+  power:
+    input: "220VAC single phase"
+    ups_required: true
+  mechanical:
+    x_scan_m: 4.0
+    z_scan_m: 3.0
+    y_max_m: 0.60
+    payload_kg_max: 5.0
+    door_fit_m:
+      width: 1.5
+      height: 2.0
+    tolerances:
+      dimension_percent: 10
+  motion:
+    min_speed_m_s: 0.05
+    planarity_rms_um_max: 100
+    resolution_rms_um_max: 50
+    abs_accuracy_rms_um_max: 130
+    repeatability_pp_um_max: 50
+
+interfaces:
+  control_pc_to_controller:
+    physical: ["USB", "Ethernet"]
+    protocol_candidates: ["VendorAPI", "CustomTCP"]
+  pc_to_vna:
+    physical: ["LAN", "USB"]
+    protocol: "SCPI"
+  controller_to_io:
+    digital_outputs:
+      - name: "ttl_trigger"
+        type: "TTL"
+        active_level: "HIGH"
+      - name: "position_step_pulse"
+        type: "TTL"
+        active_level: "HIGH"
+    digital_inputs:
+      - name: "estop_chain"
+      - name: "x_limit"
+      - name: "z_limit"
+      - name: "x_home"
+      - name: "z_home"
+  feedback:
+    encoders: ["x_encoder", "z_encoder"]
+
+icd_placeholders:
+  ip_map:
+    controller: "TBD"
+    vna: "10.0.21.151"
+  serial_map:
+    controller_port: "COM5"
+  signal_map:
+    trigger_out_pin: "TBD"
+    estop_in_pin: "TBD"

@@ -1,0 +1,10 @@
+{
+  "pipeline": [
+    "validate_workspace",
+    "parse_icd_if_present",
+    "generate_connection_map",
+    "generate_or_update_code",
+    "run_local_checks",
+    "build_exe"
+  ]
+}

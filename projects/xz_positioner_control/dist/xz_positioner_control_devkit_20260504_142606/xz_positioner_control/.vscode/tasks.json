@@ -1,0 +1,20 @@
+﻿{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup Dev Environment",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts\\setup_dev_env.ps1"
+    },
+    {
+      "label": "Run Demo",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe -m xz_control_ui.main"
+    },
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "$env:PYTHONPATH='src'; .\\.venv\\Scripts\\python.exe -m pytest -q tests"
+    }
+  ]
+}

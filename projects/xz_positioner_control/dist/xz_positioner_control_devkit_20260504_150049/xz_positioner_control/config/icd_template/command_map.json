@@ -1,0 +1,9 @@
+﻿{
+  "move_abs_template": "MOVE {axis} {target_mm:.3f}",
+  "stop_cmd": "STOP",
+  "home_cmd": "HOME",
+  "park_cmd": "PARK",
+  "read_axis_template": "READ {axis}",
+  "read_status_cmd": "READ STATUS",
+  "read_alarms_cmd": "READ ALARMS"
+}

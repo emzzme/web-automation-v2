@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1520</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>XZ Pozisyoner Ana Kontrol - UI Tasarimi</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="topbarFrame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="topbarLayout">
+       <item>
+        <widget class="QLabel" name="projectLabel">
+         <property name="text">
+          <string>Proje: Demo_24GHz_Antenna</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="modeLabel">
+         <property name="text">
+          <string>Sistem Modu: READY</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QFrame" name="leftPanelFrame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <layout class="QVBoxLayout" name="leftPanelLayout">
+        <item>
+         <widget class="QGroupBox" name="manualGroup">
+          <property name="title">
+           <string>Manuel Kontrol</string>
+          </property>
+          <layout class="QVBoxLayout" name="manualGroupLayout">
+           <item>
+            <widget class="QLabel" name="xPosLabel">
+             <property name="text">
+              <string>X Konum: 0.00 mm</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="zPosLabel">
+             <property name="text">
+              <string>Z Konum: 0.00 mm</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="recipeGroup">
+          <property name="title">
+           <string>Tarama Recetesi</string>
+          </property>
+          <layout class="QFormLayout" name="recipeFormLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_recipeName">
+             <property name="text">
+              <string>Recete Adi</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="recipeNameLineEdit">
+             <property name="text">
+              <string>Plane_XZ_Scan_5mm</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_xStart">
+             <property name="text">
+              <string>X Baslangic (mm)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="xStartLineEdit">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_xStop">
+             <property name="text">
+              <string>X Bitis (mm)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="xStopLineEdit">
+             <property name="text">
+              <string>1000</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_xStep">
+             <property name="text">
+              <string>X Adim (mm)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="xStepLineEdit">
+             <property name="text">
+              <string>500</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_zStart">
+             <property name="text">
+              <string>Z Baslangic (mm)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="zStartLineEdit">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_zStop">
+             <property name="text">
+              <string>Z Bitis (mm)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="zStopLineEdit">
+             <property name="text">
+              <string>1000</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_zStep">
+             <property name="text">
+              <string>Z Adim (mm)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="zStepLineEdit">
+             <property name="text">
+              <string>500</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QCheckBox" name="snakingCheckBox">
+             <property name="text">
+              <string>Snaking</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QPushButton" name="applyRecipeButton">
+             <property name="text">
+              <string>Receteyi Uygula</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QFrame" name="rightPanelFrame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <layout class="QVBoxLayout" name="rightPanelLayout">
+        <item>
+         <widget class="QGroupBox" name="graphsGroup">
+          <property name="title">
+           <string>Grafik Alanlari (Kodda pyqtgraph ile doldurulur)</string>
+          </property>
+          <layout class="QVBoxLayout" name="graphsLayout">
+           <item>
+            <widget class="QFrame" name="tracePlaceholderFrame">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <layout class="QVBoxLayout" name="tracePlaceholderLayout">
+              <item>
+               <widget class="QLabel" name="tracePlaceholderLabel">
+                <property name="text">
+                 <string>S21 Trace Placeholder</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="heatmapPlaceholderFrame">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <layout class="QVBoxLayout" name="heatmapPlaceholderLayout">
+              <item>
+               <widget class="QLabel" name="heatmapPlaceholderLabel">
+                <property name="text">
+                 <string>XZ Heatmap Placeholder</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

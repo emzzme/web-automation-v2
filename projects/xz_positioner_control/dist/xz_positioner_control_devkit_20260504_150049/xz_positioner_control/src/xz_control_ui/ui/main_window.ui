@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1520</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>XZ Pozisyoner Ana Kontrol - Full UI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="rootLayout">
+    <item>
+     <widget class="QFrame" name="topbarFrame">
+      <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+      <layout class="QHBoxLayout" name="topbarLayout">
+       <item><widget class="QLabel" name="projectLabel"><property name="text"><string>Proje: Demo_24GHz_Antenna</string></property></widget></item>
+       <item><widget class="QLabel" name="recipeLabel"><property name="text"><string>Aktif Recete: Plane_XZ_Scan_5mm</string></property></widget></item>
+       <item><spacer name="topSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+       
+       <item><widget class="QComboBox" name="runtimeModeCombo"><item><property name="text"><string>DEMO</string></property></item><item><property name="text"><string>HARDWARE</string></property></item></widget></item>
+       <item><widget class="QCheckBox" name="realVnaCheckBox"><property name="text"><string>Real VNA</string></property></widget></item>
+       <item><widget class="QPushButton" name="vnaConnectButton"><property name="text"><string>VNA Baglantisi</string></property></widget></item>
+       <item><widget class="QPushButton" name="layoutToggleButton"><property name="text"><string>Ayarlar: Kilitli</string></property></widget></item>
+       <item><widget class="QPushButton" name="fullscreenButton"><property name="text"><string>Tam Ekran</string></property></widget></item>
+       <item><widget class="QPushButton" name="dryRunButton"><property name="text"><string>Dry-Run</string></property></widget></item>
+       <item><widget class="QLabel" name="modeLabel"><property name="text"><string>Sistem Modu: READY</string></property></widget></item>
+       <item><widget class="QLabel" name="gainLabel"><property name="text"><string>Gain (Peak): - dB</string></property></widget></item>
+       <item><widget class="QLabel" name="safetyLabel"><property name="text"><string>Safety: READY</string></property></widget></item>
+       <item><widget class="QLabel" name="ttlLabel"><property name="text"><string>TTL Sayac: 0</string></property></widget></item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation"><enum>Qt::Horizontal</enum></property>
+      <widget class="QWidget" name="leftColumn">
+       <layout class="QVBoxLayout" name="leftLayout">
+        <item>
+         <widget class="QGroupBox" name="manualGroup">
+          <property name="title"><string>Manuel Kontrol - X/Z</string></property>
+          <layout class="QVBoxLayout" name="manualGroupLayout">
+           <item><widget class="QLabel" name="xPosLabel"><property name="text"><string>X Konum: 0.00 mm</string></property></widget></item>
+           <item><widget class="QLabel" name="zPosLabel"><property name="text"><string>Z Konum: 0.00 mm</string></property></widget></item>
+           <item>
+            <layout class="QHBoxLayout" name="speedLayout">
+             <item><widget class="QLabel" name="xSpeedText"><property name="text"><string>X hiz</string></property></widget></item>
+             <item><widget class="QLineEdit" name="xSpeedLineEdit"><property name="text"><string>150</string></property></widget></item>
+             <item><widget class="QLabel" name="zSpeedText"><property name="text"><string>Z hiz</string></property></widget></item>
+             <item><widget class="QLineEdit" name="zSpeedLineEdit"><property name="text"><string>150</string></property></widget></item>
+             <item><widget class="QPushButton" name="applySpeedButton"><property name="text"><string>Hiz Uygula</string></property></widget></item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="jogLayout">
+             <item row="0" column="0"><widget class="QPushButton" name="jogXmButton"><property name="text"><string>X Jog -</string></property></widget></item>
+             <item row="0" column="1"><widget class="QPushButton" name="jogXpButton"><property name="text"><string>X Jog +</string></property></widget></item>
+             <item row="1" column="0"><widget class="QPushButton" name="jogZmButton"><property name="text"><string>Z Jog -</string></property></widget></item>
+             <item row="1" column="1"><widget class="QPushButton" name="jogZpButton"><property name="text"><string>Z Jog +</string></property></widget></item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="manualCmdLayout">
+             <item row="0" column="0"><widget class="QPushButton" name="homeButton"><property name="text"><string>Home</string></property></widget></item>
+             <item row="0" column="1"><widget class="QPushButton" name="parkButton"><property name="text"><string>Park</string></property></widget></item>
+             <item row="0" column="2"><widget class="QPushButton" name="stopButton"><property name="text"><string>STOP</string></property></widget></item>
+             <item row="1" column="0"><widget class="QPushButton" name="estopButton"><property name="text"><string>E-STOP</string></property></widget></item>
+             <item row="1" column="1"><widget class="QPushButton" name="estopResetButton"><property name="text"><string>E-STOP Reset</string></property></widget></item>
+            </layout>
+           </item>
+           <item><widget class="QCheckBox" name="xLimitCheckBox"><property name="text"><string>X Limit</string></property></widget></item>
+           <item><widget class="QCheckBox" name="zLimitCheckBox"><property name="text"><string>Z Limit</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="recipeGroup">
+          <property name="title"><string>Tarama Recetesi</string></property>
+          <layout class="QFormLayout" name="recipeFormLayout">
+           <item row="0" column="0"><widget class="QLabel" name="label_recipeName"><property name="text"><string>Recete Adi</string></property></widget></item>
+           <item row="0" column="1"><widget class="QLineEdit" name="recipeNameLineEdit"><property name="text"><string>Plane_XZ_Scan_5mm</string></property></widget></item>
+           <item row="1" column="0"><widget class="QLabel" name="label_xStart"><property name="text"><string>X Baslangic (mm)</string></property></widget></item>
+           <item row="1" column="1"><widget class="QLineEdit" name="xStartLineEdit"><property name="text"><string>0</string></property></widget></item>
+           <item row="2" column="0"><widget class="QLabel" name="label_xStop"><property name="text"><string>X Bitis (mm)</string></property></widget></item>
+           <item row="2" column="1"><widget class="QLineEdit" name="xStopLineEdit"><property name="text"><string>1000</string></property></widget></item>
+           <item row="3" column="0"><widget class="QLabel" name="label_xStep"><property name="text"><string>X Adim (mm)</string></property></widget></item>
+           <item row="3" column="1"><widget class="QLineEdit" name="xStepLineEdit"><property name="text"><string>500</string></property></widget></item>
+           <item row="4" column="0"><widget class="QLabel" name="label_zStart"><property name="text"><string>Z Baslangic (mm)</string></property></widget></item>
+           <item row="4" column="1"><widget class="QLineEdit" name="zStartLineEdit"><property name="text"><string>0</string></property></widget></item>
+           <item row="5" column="0"><widget class="QLabel" name="label_zStop"><property name="text"><string>Z Bitis (mm)</string></property></widget></item>
+           <item row="5" column="1"><widget class="QLineEdit" name="zStopLineEdit"><property name="text"><string>1000</string></property></widget></item>
+           <item row="6" column="0"><widget class="QLabel" name="label_zStep"><property name="text"><string>Z Adim (mm)</string></property></widget></item>
+           <item row="6" column="1"><widget class="QLineEdit" name="zStepLineEdit"><property name="text"><string>500</string></property></widget></item>
+           <item row="7" column="1"><widget class="QCheckBox" name="snakingCheckBox"><property name="text"><string>Snaking</string></property><property name="checked"><bool>true</bool></property></widget></item>
+           <item row="8" column="1"><widget class="QPushButton" name="applyRecipeButton"><property name="text"><string>Receteyi Uygula</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="vnaSettingsGroup">
+          <property name="title"><string>VNA Ayarlari</string></property>
+          <layout class="QFormLayout" name="vnaFormLayout">
+           <item row="0" column="0"><widget class="QLabel" name="label_vnaModel"><property name="text"><string>Model</string></property></widget></item>
+           <item row="0" column="1"><widget class="QComboBox" name="vnaModelCombo"><item><property name="text"><string>R&amp;S ZNL14</string></property></item><item><property name="text"><string>Keysight N9917B</string></property></item></widget></item>
+           <item row="1" column="0"><widget class="QLabel" name="label_vnaStart"><property name="text"><string>Start (GHz)</string></property></widget></item>
+           <item row="1" column="1"><widget class="QDoubleSpinBox" name="vnaStartSpin"><property name="decimals"><number>3</number></property><property name="minimum"><double>0.001000000000000</double></property><property name="maximum"><double>50.000000000000000</double></property><property name="value"><double>1.000000000000000</double></property></widget></item>
+           <item row="2" column="0"><widget class="QLabel" name="label_vnaStop"><property name="text"><string>Stop (GHz)</string></property></widget></item>
+           <item row="2" column="1"><widget class="QDoubleSpinBox" name="vnaStopSpin"><property name="decimals"><number>3</number></property><property name="minimum"><double>0.001000000000000</double></property><property name="maximum"><double>50.000000000000000</double></property><property name="value"><double>14.000000000000000</double></property></widget></item>
+           <item row="3" column="0"><widget class="QLabel" name="label_vnaPoints"><property name="text"><string>Points</string></property></widget></item>
+           <item row="3" column="1"><widget class="QSpinBox" name="vnaPointsSpin"><property name="minimum"><number>11</number></property><property name="maximum"><number>4001</number></property><property name="value"><number>101</number></property></widget></item>
+           <item row="4" column="0"><widget class="QLabel" name="label_vnaIfbw"><property name="text"><string>IFBW (Hz)</string></property></widget></item>
+           <item row="4" column="1"><widget class="QDoubleSpinBox" name="vnaIfbwSpin"><property name="minimum"><double>1.000000000000000</double></property><property name="maximum"><double>1000000.000000000000000</double></property><property name="value"><double>1000.000000000000000</double></property></widget></item>
+           <item row="5" column="0"><widget class="QLabel" name="label_vnaPower"><property name="text"><string>Power (dBm)</string></property></widget></item>
+           <item row="5" column="1"><widget class="QDoubleSpinBox" name="vnaPowerSpin"><property name="minimum"><double>-60.000000000000000</double></property><property name="maximum"><double>20.000000000000000</double></property><property name="value"><double>-10.000000000000000</double></property></widget></item>
+           <item row="6" column="1"><widget class="QPushButton" name="applyVnaButton"><property name="text"><string>VNA Ayarlari Uygula</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="centerColumn">
+       <layout class="QVBoxLayout" name="centerLayout">
+        <item>
+         <widget class="QGroupBox" name="scanControlGroup">
+          <property name="title"><string>Otomatik Tarama / ICD / Gain</string></property>
+          <layout class="QVBoxLayout" name="scanControlLayout">
+           <item>
+            <layout class="QHBoxLayout" name="scanButtonsLayout">
+             <item><widget class="QPushButton" name="startScanButton"><property name="text"><string>Baslat</string></property></widget></item>
+             <item><widget class="QPushButton" name="pauseScanButton"><property name="text"><string>Duraklat</string></property></widget></item>
+             <item><widget class="QPushButton" name="resumeScanButton"><property name="text"><string>Devam</string></property></widget></item>
+             <item><widget class="QPushButton" name="abortScanButton"><property name="text"><string>Iptal</string></property></widget></item>
+             <item><widget class="QPushButton" name="downloadReportButton"><property name="text"><string>Raporu Indir</string></property></widget></item>
+            </layout>
+           </item>
+           <item><widget class="QProgressBar" name="scanProgressBar"><property name="value"><number>0</number></property></widget></item>
+           <item><widget class="QLabel" name="progressLabel"><property name="text"><string>Ilerleme: 0/0</string></property></widget></item>
+           <item><widget class="QLabel" name="gainSideLabel"><property name="text"><string>Gain (Peak): - dB</string></property></widget></item>
+           <item>
+            <layout class="QHBoxLayout" name="scanToolsLayout">
+             <item><widget class="QPushButton" name="selfCheckButton"><property name="text"><string>Self-Check</string></property></widget></item>
+             <item><widget class="QPushButton" name="functionTestButton"><property name="text"><string>Fonksiyon Testi</string></property></widget></item>
+             <item><widget class="QPushButton" name="loadIcdButton"><property name="text"><string>ICD Yukle</string></property></widget></item>
+            </layout>
+           </item>
+           <item><widget class="QLabel" name="icdPathLabel"><property name="text"><string>ICD: yuklenmedi</string></property></widget></item>
+           <item><widget class="QLabel" name="icdMapLabel"><property name="text"><string>Map: beklemede</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="traceGroup">
+          <property name="title"><string>Canli S21 Trace</string></property>
+          <layout class="QVBoxLayout" name="traceLayout">
+           <item><widget class="QFrame" name="tracePlaceholderFrame"><property name="frameShape"><enum>QFrame::StyledPanel</enum></property><layout class="QVBoxLayout" name="tracePlaceholderLayout"><item><widget class="QLabel" name="tracePlaceholderLabel"><property name="text"><string>Trace Grafik Alani</string></property></widget></item></layout></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="heatmapGroup">
+          <property name="title"><string>XZ Tarama Haritasi</string></property>
+          <layout class="QVBoxLayout" name="heatmapLayout">
+           <item><widget class="QFrame" name="heatmapPlaceholderFrame"><property name="frameShape"><enum>QFrame::StyledPanel</enum></property><layout class="QVBoxLayout" name="heatmapPlaceholderLayout"><item><widget class="QLabel" name="heatmapPlaceholderLabel"><property name="text"><string>Heatmap Grafik Alani</string></property></widget></item></layout></widget></item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="rightColumn">
+       <layout class="QVBoxLayout" name="rightLayout">
+        <item>
+         <widget class="QGroupBox" name="timeSeriesGroup">
+          <property name="title"><string>S21 Zaman Akisi</string></property>
+          <layout class="QVBoxLayout" name="timeSeriesLayout">
+           <item><widget class="QFrame" name="timePlaceholderFrame"><property name="frameShape"><enum>QFrame::StyledPanel</enum></property><layout class="QVBoxLayout" name="timePlaceholderLayout"><item><widget class="QLabel" name="timePlaceholderLabel"><property name="text"><string>Zaman Grafik Alani</string></property></widget></item></layout></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="scanPlanGroup">
+          <property name="title"><string>Tarama Nokta Plani</string></property>
+          <layout class="QVBoxLayout" name="scanPlanLayout">
+           <item><widget class="QFrame" name="scanPlanPlaceholderFrame"><property name="frameShape"><enum>QFrame::StyledPanel</enum></property><layout class="QVBoxLayout" name="scanPlanPlaceholderLayout"><item><widget class="QLabel" name="scanPlanPlaceholderLabel"><property name="text"><string>Tarama Plani Grafik Alani</string></property></widget></item></layout></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="alarmLogGroup">
+          <property name="title"><string>Alarm / Log</string></property>
+          <layout class="QVBoxLayout" name="alarmLogLayout">
+           <item><widget class="QTableWidget" name="logTable"><column><property name="text"><string>Seviye</string></property></column><column><property name="text"><string>Kaynak</string></property></column><column><property name="text"><string>Mesaj</string></property></column></widget></item>
+           <item><widget class="QPushButton" name="clearLogButton"><property name="text"><string>Temizle</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+

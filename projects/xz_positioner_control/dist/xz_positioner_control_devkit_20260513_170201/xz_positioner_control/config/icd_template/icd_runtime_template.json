@@ -1,0 +1,64 @@
+﻿{
+  "icd_meta": {
+    "doc_no": "ICD-XZRF-001",
+    "revision": "A",
+    "date": "2026-05-04",
+    "customer": "MUSTERI_ADI",
+    "supplier": "YUKLENICI_ADI"
+  },
+  "runtime_activation": {
+    "controller_transport": "USB",
+    "controller_target": "COM5",
+    "vna_transport": "LAN",
+    "vna_target": "10.0.21.151",
+    "trigger_mode": "TTL_STEP"
+  },
+  "controller_link": {
+    "ethernet": {
+      "ip": "10.0.21.50",
+      "port": 5025,
+      "protocol": "TCP"
+    },
+    "usb_serial": {
+      "com_port": "COM5",
+      "baudrate": 115200,
+      "parity": "N",
+      "stop_bits": 1
+    }
+  },
+  "vna_link": {
+    "transport": "LAN",
+    "visa_resource": "TCPIP0::10.0.21.151::inst0::INSTR",
+    "scpi_timeout_ms": 5000
+  },
+  "ttl_io": {
+    "trigger_out_pin": "DO0",
+    "estop_in_pin": "DI0",
+    "x_limit_in_pin": "DI1",
+    "z_limit_in_pin": "DI2",
+    "x_home_in_pin": "DI3",
+    "z_home_in_pin": "DI4",
+    "pulse_width_us": 10,
+    "pulse_delay_us": 50,
+    "polarity": "positive"
+  },
+  "command_map": {
+    "move_abs_template": "MOVE {axis} {target_mm:.3f}",
+    "stop_cmd": "STOP",
+    "home_cmd": "HOME",
+    "park_cmd": "PARK",
+    "read_axis_template": "READ {axis}",
+    "read_status_cmd": "READ STATUS",
+    "read_alarms_cmd": "READ ALARMS"
+  },
+  "vna_scpi": {
+    "idn_query": "*IDN?",
+    "set_start": "SENS:FREQ:STAR {start_ghz}GHz",
+    "set_stop": "SENS:FREQ:STOP {stop_ghz}GHz",
+    "set_points": "SENS:SWE:POIN {points}",
+    "set_ifbw": "SENS:BAND {ifbw_hz}",
+    "set_power": "SOUR:POW {power_dbm}",
+    "set_trace_s21": "CALC:PAR:DEF 'Trc1','S21'",
+    "trigger_and_wait": "INIT:IMM; *OPC?"
+  }
+}

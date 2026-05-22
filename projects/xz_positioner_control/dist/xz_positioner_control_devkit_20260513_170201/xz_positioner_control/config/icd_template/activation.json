@@ -1,0 +1,7 @@
+﻿{
+  "controller_transport": "USB",
+  "controller_target": "COM5",
+  "vna_transport": "LAN",
+  "vna_target": "10.0.21.151",
+  "trigger_mode": "TTL_STEP"
+}

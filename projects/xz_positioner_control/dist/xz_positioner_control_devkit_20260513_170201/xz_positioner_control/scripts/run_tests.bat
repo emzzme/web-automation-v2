@@ -1,0 +1,12 @@
+@echo off
+setlocal
+set "SCRIPT_DIR=%~dp0"
+set "ROOT_DIR=%SCRIPT_DIR%.."
+set "PY=%ROOT_DIR%\.venv\Scripts\python.exe"
+if not exist "%PY%" (
+  echo .venv bulunamadi. Once scripts\setup_dev_env.bat calistirin.
+  exit /b 1
+)
+set "PYTHONPATH=%ROOT_DIR%\src"
+"%PY%" -m pytest -q tests
+exit /b %ERRORLEVEL%

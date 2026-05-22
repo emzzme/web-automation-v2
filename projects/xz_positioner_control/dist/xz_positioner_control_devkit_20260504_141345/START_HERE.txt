@@ -1,0 +1,14 @@
+﻿XZ Positioner Control - Dev Kit
+
+1) scripts\\setup_dev_env.bat dosyasini calistirin.
+2) Qt Designer: scripts\\open_qt_designer.bat
+3) Canli UI onizleme: scripts\\run_ui_live_preview.bat
+4) Tam fonksiyonlu demo: scripts\\launch_demo_full.bat
+5) Testler: scripts\\run_tests.bat
+6) Adim adim UI gelistirme rehberi:
+   docs\\qt_designer_gelistirme_rehberi_tr.md
+
+VS Code kullanimi:
+- Klasoru acin: xz_positioner_control
+- .vscode ayarlari otomatik yuklenir.
+- Tasklar: Setup Dev Environment / Run Demo / Run Tests

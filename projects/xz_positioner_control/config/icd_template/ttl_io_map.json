@@ -1,0 +1,11 @@
+﻿{
+  "trigger_out_pin": "DO0",
+  "estop_in_pin": "DI0",
+  "x_limit_in_pin": "DI1",
+  "z_limit_in_pin": "DI2",
+  "x_home_in_pin": "DI3",
+  "z_home_in_pin": "DI4",
+  "pulse_width_us": 10,
+  "pulse_delay_us": 50,
+  "polarity": "positive"
+}

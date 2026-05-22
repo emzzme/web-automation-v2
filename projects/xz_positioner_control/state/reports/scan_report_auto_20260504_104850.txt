@@ -1,0 +1,27 @@
+XZ TARAMA SONUC RAPORU
+======================
+Tarih/Saat: 2026-05-04 10:48:50
+
+VNA AYARLARI
+Model: R&S ZNL14
+Frekans: 16.000 - 26.000 GHz
+Nokta: 101
+IFBW: 1000.0 Hz
+Guc: -10.0 dBm
+
+TARAMA OZETI
+Toplam Nokta: 9
+Taranan Nokta: 9
+TTL Tetik Sayisi: 24
+
+PERFORMANS
+Peak Gain: -7.04 dB
+Ortalama Gain: -9.99 dB
+Harita Min/Max: -30.49 / 35.12 dB
+
+ANTEN DEGERLENDIRME
+Saglik Durumu: IYI
+Tahmini Verimlilik: %82.4
+Alarm Sayisi: 1
+
+Not: Bu rapor demo modundaki olcum simulasyonu uzerinden uretilmistir.
